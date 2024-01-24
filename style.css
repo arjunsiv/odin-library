@@ -1,0 +1,29 @@
+h1{
+    text-align: center;
+}
+
+.container {
+    display:grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, 250px);
+
+}
+
+.card{
+    background-color: aqua;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-around ;
+    border: 2px solid darkblue;
+}
+
+.read{
+    display: flex;
+    align-items: center;
+}
+
+.card  button:first-child{
+    align-self: flex-end;
+}
