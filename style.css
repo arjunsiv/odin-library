@@ -27,3 +27,31 @@ h1{
 .card  button:first-child{
     align-self: flex-end;
 }
+
+.newbook {
+    display: flex;
+    justify-content: center;
+}
+
+.newbook button{
+    margin: 40px;
+    height: 40px;
+}
+
+form >div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    row-gap: 5px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+}
+form > div >div{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}

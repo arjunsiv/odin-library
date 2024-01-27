@@ -9,6 +9,42 @@
 </head>
 <body>
     <h1>My Library</h1>
+    <dialog >
+        <form>
+            <div>
+                <div>
+                    <label for="author">Author : </label>
+                    <input name="author" type="text" required>
+                </div>
+
+                <div>
+                    <label for="title">Title : </label>
+                    <input name="title" type="text" required>
+                </div>
+
+                <div>
+                    <label for="pages">Pages : </label>
+                    <input name="pages" type="number" required>
+                </div>
+
+                <div>
+                    <label>Read : </label>
+                    <div>
+                        <input type="radio" name="read" value="yes" checked>
+                        <label>Yes</label>
+                        <input type="radio" name="read" value="no">
+                        <label>No</label>
+                    </div>
+                </div>
+                <button id="formSubmit">Submit</button>
+
+            </div>
+        </form>
+    </dialog>
+    <div class="newbook">
+        <button>+ New Book</button>
+    </div>
+    
     <div class="container">
     </div>
     
