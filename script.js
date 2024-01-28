@@ -1,17 +1,5 @@
-const myLibrary = [
-    {
-        Author:"Arjun",
-        Title:"The book",
-        "Number of pages" : 25,
-        Read: "yes",
-    }
-    ,
-    {
-        Author:"Arjun",
-        Title:"The book",
-        "Number of pages" : 25,
-        Read: "yes",
-    }
+const  myLibrary = [
+
 ];
 
 function Book(author, title, pages, read) {
@@ -22,6 +10,12 @@ function Book(author, title, pages, read) {
   // the constructor...
 }
 
+Book.prototype.changeStatus = function(){
+    this.Read = this.Read == "yes" ? "no" : "yes" ;
+    UpdateView();
+
+}
+
 function addBookToLibrary(book) {
   // do stuff here
   myLibrary.push(book);
@@ -30,19 +24,32 @@ function addBookToLibrary(book) {
 function displayBooks(){
     // myLibrary.map()
     const container = document.querySelector(".container");
-    myLibrary.forEach(element => {
+    myLibrary.forEach((element,i) => {
         const card = document.createElement("div");
         card.classList.add("card");
 
         const deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
+        deleteButton.addEventListener("click",(event)=>{
+            myLibrary.splice(i,1);
+            UpdateView();
+        })
+
         card.appendChild(deleteButton);
 
         for(const key in element) {
+
+            if(key == "changeStatus"){
+                continue;
+            }
+            
             if(key === "Read") {
                 const item = document.createElement("button");
                 item.innerHTML=key + " : " + element[key];;
                 card.appendChild(item);
+                item.addEventListener("click",(event)=>{
+                    element.changeStatus();
+                })
             }
             else{
                 const item = document.createElement("p");
